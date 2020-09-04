@@ -17,4 +17,23 @@ class Post extends Model
      'is_featured',
      'is_published'
      ];
+
+    /**
+     * Get the user that owns the post.
+     */
+
+    public function user() {
+        return $this->belongsTo('App\User');
+    }
+
+    /**
+     * Gets the category that owns the post
+     */
+    public function categories() {
+        return $this->belongsTo('App\Category');
+    }
+
+    public function tags() {
+        return $this->belongsToMany('App\Tag');
+    }
 }

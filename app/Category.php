@@ -12,4 +12,11 @@ class Category extends Model
         'description',
         'slug',
     ];
+
+    /**
+     * Gets the posts for the user
+     */
+    public function posts() {
+        return $this->hasMany('App\Post');
+    }
 }
