@@ -81,11 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                   Ryan's Laravel App in a container!
-                </div>
-
-                <div class="links">
-                    <a href="./index">Dummy</a>
+                   You're routed to a dummy view.
                 </div>
             </div>
         </div>
