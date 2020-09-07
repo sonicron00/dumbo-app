@@ -20,12 +20,12 @@ services:
     volumes:
       - ./:/var/www
     depends_on:
-      - dumbo-database
+      - mysql
     environment:
       - "DB_DATABASE=homestead"
       - "DB_USERNAME=homestead"
-      - "DB_HOST=dumbo-database"
-      - "DB_PASSWORD=secret"
+      - "DB_HOST=mysql"
+      - "DB_PASSWORD=banana500"
       - "KAFKA_BROKERS=kafka"
       - "REDIS_HOST=dumbo-redis"
       - "APP_URL=http://localhost:8084"
@@ -52,8 +52,8 @@ services:
       - 8084:80
 
   # The Database
-  dumbo-database:
-    container_name: dumbo-database
+  mysql:
+    container_name: mysql
     networks:
       - dumbo
     image: mysql:5.7
