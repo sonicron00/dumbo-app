@@ -6,7 +6,7 @@
         <div class="col-md-8">
 
             <h1 class="my-4">Laravel Blog
-                <small>Home Page</small>
+                <small>Home</small>
             </h1>
 
             @include('widgets.blog-masonry')
