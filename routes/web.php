@@ -18,3 +18,9 @@ Route::get('/', function () {
 });
 
 Route::get('index', 'IndexController@index');
+Route::get('post/{slug}', 'PostController@index');
+Route::get('create', 'PostController@create');
+Route::get('doCreate', 'PostController@doCreate');
+Route::get('search', 'IndexController@search');
+Route::get('category/{slug}', 'CategoryController@index');
+Route::get('tag/{slug}', 'TagController@index');

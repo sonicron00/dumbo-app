@@ -4,14 +4,15 @@
     <!-- Search Widget -->
     <div class="card my-4">
         <h5 class="card-header">Search</h5>
-        <div class="card-body">
+        <form class="card-body" action="/search" method="GET" role="search">
+            {{ csrf_field() }}
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for...">
+                <input type="text" class="form-control" placeholder="Search for..." name="q">
                 <span class="input-group-btn">
-                <button class="btn btn-secondary" type="button">Go!</button>
-              </span>
+            <button class="btn btn-secondary" type="submit">Go!</button>
+          </span>
             </div>
-        </div>
+        </form>
     </div>
 
     <!-- Categories Widget -->
@@ -69,12 +70,26 @@
         </div>
     </div>
 
-    <!-- Side Widget -->
-    <div class="card my-4">
-        <h5 class="card-header">Others</h5>
-        <div class="card-body">
-            Random side widget placeholder.
+    @if(empty($related_posts))
+    @else
+    <!-- Related Posts Widget -->
+        <div class="card my-4">
+            <h5 class="card-header">Related Posts</h5>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="list-unstyled mb-0">
+                            @foreach($related_posts as $post)
+                                <li>
+                                    <a href="/post/{{$post->slug}}">{{$post->title}}</a>
+                                </li>
+                                <hr>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    @endif
 
 </div>
